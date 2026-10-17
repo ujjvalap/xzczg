@@ -1,2 +1,31 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build output
+target/
+build/
+out/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.jks
+
+# Local secret configuration
+application-local.properties
+application-secret.properties

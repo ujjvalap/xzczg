@@ -33,10 +33,11 @@ public class ProductController {
             @RequestParam(name = "price[gte]", required = false) Double priceGte,
             @RequestParam(name = "price[lte]", required = false) Double priceLte,
             @RequestParam(name = "ratings[gte]", required = false) Double ratingsGte,
-            @RequestParam(required = false) Integer page
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size
     ) {
         ProductsListResponse response = productService.getAllProducts(
-                keyword, category, priceGte, priceLte, ratingsGte, page
+                keyword, category, priceGte, priceLte, ratingsGte, page, size
         );
         return ResponseEntity.ok(response);
     }

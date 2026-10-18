@@ -84,7 +84,19 @@ public class ProductService {
             Double ratingsGte,
             Integer page
     ) {
-        int resultsPerPage = 4;
+        return getAllProducts(keyword, category, priceGte, priceLte, ratingsGte, page, 12);
+    }
+
+    public ProductsListResponse getAllProducts(
+            String keyword,
+            String category,
+            Double priceGte,
+            Double priceLte,
+            Double ratingsGte,
+            Integer page,
+            Integer size
+    ) {
+        int resultsPerPage = (size != null && size > 0) ? size : 12;
         int currentPage = (page != null && page > 0) ? page : 1;
 
         Specification<Product> spec = (root, query, cb) -> {
